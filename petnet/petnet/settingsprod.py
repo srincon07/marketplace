@@ -13,7 +13,7 @@ SECRET_KEY = "django-insecure-aru_=hi+^e%wbhu(&kh_z5%4m3!vsk$$4uo_3yw39c%hdyb3tc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["www.petnet.com", "petnet.com"]
+ALLOWED_HOSTS = ["170.64.141.188", "www.petnet.com", "petnet.com"]
 
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "myaccount"
