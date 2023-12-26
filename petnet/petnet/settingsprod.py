@@ -8,12 +8,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-aru_=hi+^e%wbhu(&kh_z5%4m3!vsk$$4uo_3yw39c%hdyb3tc"
+SECRET_KEY = DJANGO_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["170.64.141.188", "www.petnet.com", "petnet.com"]
+ALLOWED_HOSTS = ["170.64.189.79", "www.petnet.com", "petnet.com"]
 
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "myaccount"
@@ -81,8 +81,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "django",
-        "USER": "django",
-        "PASSWORD": "9f54f5408b0d4d34bad075e2ab40361d",
+        "USER": DJANGO_USER,
+        "PASSWORD": DJANGO_POSTGRESS_PASS,
         "HOST": "170.64.189.79",
         "PORT": "5432",
     }
