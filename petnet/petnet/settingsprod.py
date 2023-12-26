@@ -79,8 +79,12 @@ WSGI_APPLICATION = "petnet.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "django",
+        "USER": "django",
+        "PASSWORD": "9f54f5408b0d4d34bad075e2ab40361d",
+        "HOST": "170.64.189.79",
+        "PORT": "5432",
     }
 }
 

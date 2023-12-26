@@ -124,6 +124,7 @@ env.bak/
 venv.bak/
 petnet_env/
 market_env/
+market_venv/
 
 # Spyder project settings
 .spyderproject
