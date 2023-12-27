@@ -13,7 +13,10 @@ SECRET_KEY = DJANGO_SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["170.64.189.79", "www.petnet.com", "petnet.com"]
+ALLOWED_HOSTS = [
+    "170.64.210.191",
+    "localhost",
+]
 
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "myaccount"
@@ -79,12 +82,12 @@ WSGI_APPLICATION = "petnet.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "django",
-        "USER": DJANGO_USER,
-        "PASSWORD": DJANGO_POSTGRESS_PASS,
-        "HOST": "170.64.189.79",
-        "PORT": "5432",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "market",
+        "USER": "django",
+        "PASSWORD": "wyE28Akotsc5FX",
+        "HOST": "localhost",
+        "PORT": "",
     }
 }
 
@@ -131,3 +134,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+import os
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
