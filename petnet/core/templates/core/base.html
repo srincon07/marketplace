@@ -1,17 +1,19 @@
+{% load static %}
 {% load menu %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}" />
     <title>
       {% block title %}
 
       {% endblock %}| PetNet
     </title>
     {% block meta %}
+
     {% endblock %}
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <nav class="max-w-4xl mx-auto py-4 px-6 flex items-center justify-between bg-teal-600">

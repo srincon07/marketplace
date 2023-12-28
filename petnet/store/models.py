@@ -96,7 +96,7 @@ class Order(models.Model):
     city = models.CharField(max_length=50)
     paid_amount = models.IntegerField(blank=True, null=True)
     is_paid = models.BooleanField(default=False)
-    payment_intent = models.CharField(max_length=255)
+    payment_intent = models.TextField()
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=ORDERED)
     created_by = models.ForeignKey(
         User, related_name="orders", on_delete=models.SET_NULL, null=True
