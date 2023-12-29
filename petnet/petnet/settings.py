@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "petnet.urls"
 
-WEBSITE_URL = "http://petnet.com/"
+WEBSITE_URL = "http://170.64.210.191/"
 
 STRIPE_PUB_KEY = "pk_test_51OPzdfC899Dy3MhwJIqvRABKgzciy5LRueX0rXQqAvfovNXw5zORWkNK8O2ViDpsDKRkiyMn4pff1DJUWKV6fpZv00URevmjc9"
 
