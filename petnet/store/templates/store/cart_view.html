@@ -9,7 +9,7 @@
 
   {% if cart|length %}
     {% for item in cart %}
-      <div class="py-4 px-4 mb-2 bg-teal-100 flex items-center">
+      <div class="py-4 px-4 mb-2 mx-auto justify-center flex items-center">
         <div>
           <img src="{{ item.product.get_thumbnail }}" alt="Image for {{ item.product.title }}" class="w-20" />
         </div>
@@ -17,14 +17,22 @@
           <h2 class="text-2xl">{{ item.product.title }}</h2>
           <p class="text-sm text-gray-400">$ {{ item.product.get_display_price }}</p>
 
-          <div class="mt-4 mb-4">
-            <a href="{% url 'change_quantity' item.product.id %}?action=increase" class="p-2 rounded-xl bg-teal-500 text-white">+</a>
+          <div class="mt-4 mb-4 flex items-center">
+            <a href="{% url 'change_quantity' item.product.id %}?action=increase" class="">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green text-semibold border-2 rounded-xl mx-3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </a>
             {{ item.quantity }}
-            <a href="{% url 'change_quantity' item.product.id %}?action=decrease" class="p-2 rounded-xl bg-teal-500 text-white">-</a>
+            <a href="{% url 'change_quantity' item.product.id %}?action=decrease" class="">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue text-semibold border-2 rounded-xl mx-3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+              </svg>
+            </a>
           </div>
 
           <a href="{% url 'remove_from_cart' item.product.id %}" class="inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
             </svg>
           </a>
@@ -38,7 +46,7 @@
 
     <hr class="mb-4 mt-4" />
 
-    <a href="{% url 'checkout' %}" class="inline-block py-4 px-8 bg-teal-500 text-white">Checkout</a>
+    <a href="{% url 'checkout' %}" class="inline-block py-4 px-8 bg-blue-600 hover:bg-blue-900 rounded-xl text-white">Checkout</a>
   {% else %}
     <div class="py-6 px-6 bg-gray-300">You don't have any products in the cart yet...</div>
   {% endif %}

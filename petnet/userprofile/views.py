@@ -8,6 +8,8 @@ from django.utils.text import slugify
 
 from .models import UserProfile
 
+from .forms import SignupForm
+
 from store.forms import ProductForm
 from store.models import Product, Order, OrderItem
 
@@ -117,7 +119,7 @@ def myaccount(request):
 
 def signup(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = SignupForm(request.POST)
 
         if form.is_valid():
             user = form.save()
@@ -128,7 +130,7 @@ def signup(request):
 
             return redirect("frontpage")
     else:
-        form = UserCreationForm()
+        form = SignupForm()
 
     return render(
         request,
