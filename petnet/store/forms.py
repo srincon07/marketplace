@@ -13,6 +13,23 @@ class OrderForm(forms.ModelForm):
             "zipcode",
             "city",
         )
+        widgets = {
+            "first_name": forms.TextInput(
+                attrs={"class": "p-2 w-full border border-gray-200 rounded-xl"}
+            ),
+            "last_name": forms.TextInput(
+                attrs={"class": "p-2 w-full border border-gray-200 rounded-xl"}
+            ),
+            "address": forms.TextInput(
+                attrs={"class": "p-2 w-full border border-gray-200 rounded-xl"}
+            ),
+            "zipcode": forms.TextInput(
+                attrs={"class": "p-2 w-full border border-gray-200 rounded-xl"}
+            ),
+            "city": forms.TextInput(
+                attrs={"class": "p-2 w-full border border-gray-200 rounded-xl"}
+            ),
+        }
 
 
 class ProductForm(forms.ModelForm):

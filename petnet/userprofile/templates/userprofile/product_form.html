@@ -8,14 +8,17 @@
   <h1 class="text-2xl">{{ title }}</h1>
 
   <form action="." method="post" enctype="multipart/form-data" class="space-y-5">
-    {% csrf_token %}
+    <div class="w-2/3 my-6 mx-auto p-6 bg-gray-100 rounded-xl grid grid-cols-2">
+      {% csrf_token %}
 
-    {{ form.as_p }}
-
-    <button class="py-4 px-8 bg-teal-500 hover:bg-teal-800 text-white">Submit</button>
+      {{ form.as_p }}
+      <div class="flex justify-center items-center">
+        <button class="py-4 px-8 w-1/2 h-12 bg-blue-600 hover:bg-blue-800 text-white rounded-xl">Submit</button>
+      </div>
+    </div>
   </form>
 
   {% if product %}
-    <a href="{% url 'delete_product' product.id %}" class="mt-2 inline-block py-4 px-8 bg-red-500 text-white">Delete product</a>
+    <a href="{% url 'delete_product' product.id %}" class="mt-2 inline-block py-4 px-8 bg-red-500 hover:bg-red-800 text-white rounded-xl">Delete product</a>
   {% endif %}
 {% endblock %}

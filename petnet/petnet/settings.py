@@ -9,9 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = (
-    "4SMvt5t2CC5UMbfZwTnWTsRFkbqU2HjeW5qaiuJpJXVAcHpzE8ShxvoTk7XmjCitqNz5jjwbgHa",
-)
+SECRET_KEY = (os.environ["DJANGO_MARKET_SECRET_KEY"],)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -55,11 +53,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "petnet.urls"
 
-WEBSITE_URL = "http://170.64.210.191/"
+WEBSITE_URL = os.environ["MARKET_WEBSITE_URL"]
 
-STRIPE_PUB_KEY = "pk_test_51OPzdfC899Dy3MhwJIqvRABKgzciy5LRueX0rXQqAvfovNXw5zORWkNK8O2ViDpsDKRkiyMn4pff1DJUWKV6fpZv00URevmjc9"
+STRIPE_PUB_KEY = os.environ["MARKET_STRIPE_PUB_KEY"]
 
-STRIPE_SECRET_KEY = "sk_test_51OPzdfC899Dy3Mhw657M5FHDOQUDu6AKou3I4FpAtusarWh6oEznPZ674BhlqxNXnf7nOm4yravc70WtEoLLvnIV00ScrW4mcN"
+STRIPE_SECRET_KEY = os.environ["MARKET_STRIPE_SECRET_KEY"]
 
 TEMPLATES = [
     {
@@ -87,10 +85,10 @@ WSGI_APPLICATION = "petnet.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "market",
-        "USER": "django",
-        "PASSWORD": "wyE28Akotsc5FX",
-        "HOST": "localhost",
+        "NAME": os.environ["MARKET_DB_NAME"],
+        "USER": os.environ["MARKET_DB_USERNAME"],
+        "PASSWORD": os.environ["MARKET_DB_USERPASSWORD"],
+        "HOST": os.environ["MARKET_DB_HOST"],
         "PORT": "",
     }
 }
