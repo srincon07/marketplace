@@ -1,7 +1,7 @@
 <div class="">
-  <div class="mt-6 px-6 py-12 grid md:grid-cols-4 gap-3 bg-gray-100 rounded-xl">
+  <div class="mt-6 px-6 py-12 grid justify-center md:justify-normal md:grid-cols-4 gap-3 bg-gray-100 rounded-xl">
     {% for product in products %}
-      <div class="mb-2 mx-auto">
+      <div class="">
         <a href="{% url 'product_detail' product.category.slug product.slug %}">
           <div class="image mb-2">
             <img src="{{ product.get_thumbnail }}" alt="Image of {{ product.title }}" class="h-44 w-60" />

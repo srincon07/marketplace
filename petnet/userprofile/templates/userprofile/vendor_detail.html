@@ -5,21 +5,19 @@
 {% endblock %}
 
 {% block content %}
-  <h2 class="text-2xl">{% firstof user.get_full_name user.username %}</h2>
+  <h2 class="text-2xl mb-4">{% firstof user.get_full_name user.username %}</h2>
 
-  <div class="flex flex-wrap">
+  <div class="flex flex-wrap justify-center md:justify-normal gap-2">
     {% for product in products %}
-      <div class="product w-1/3 p-2">
-        <div class="p-4 bg-gray-100">
-          <a href="{% url 'product_detail' product.category.slug product.slug %}">
-            <div class="image mb-4">
-              <img src="{{ product.get_thumbnail }}" alt="Image of {{ product.title }}" />
-            </div>
+      <div class="p-4 bg-gray-100">
+        <a href="{% url 'product_detail' product.category.slug product.slug %}">
+          <div class="image mb-4">
+            <img src="{{ product.get_thumbnail }}" alt="Image of {{ product.title }}" class="w-60 h-44" />
+          </div>
 
-            <h2 class="text-xl">{{ product.title }}</h2>
-            <p class="text-xs text-gray-600">${{ product.get_display_price }}</p>
-          </a>
-        </div>
+          <h2 class="text-xl">{{ product.title }}</h2>
+          <p class="text-xs text-gray-600">${{ product.get_display_price }}</p>
+        </a>
       </div>
     {% endfor %}
   </div>

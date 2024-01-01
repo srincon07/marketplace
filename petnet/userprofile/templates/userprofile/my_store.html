@@ -45,12 +45,12 @@
 
   <a href="{% url 'add_product' %}" class="mt-6 inline-block py-4 px-8 bg-blue-600 hover:bg-blue-800 text-white rounded-xl">Add product</a>
 
-  <h2 class="mt-6 text-xl">My products</h2>
+  <h2 class="mt-6 text-xl mb-4">My products</h2>
 
   {% if products %}
-    <div class="flex flex-wrap gap-2">
+    <div class="flex flex-wrap justify-center md:justify-normal gap-2">
       {% for product in products %}
-        <div class="mx-6 p-4 bg-gray-100">
+        <div class="p-4 bg-gray-100">
           <a href="{% url 'edit_product' product.id %}">
             <div class="image mb-2">
               <img src="{{ product.get_thumbnail }}" alt="Image of {{ product.title }}" class="w-60 h-44" />
