@@ -65,6 +65,7 @@ static/
 migrations/
 dev_settings.py
 prod_settings.py
+.env_prod
 
 # Flask stuff:
 instance/

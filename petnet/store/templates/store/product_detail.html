@@ -17,19 +17,19 @@
 {% endblock %}
 
 {% block content %}
-  <div class="grid grid-cols-5 gap-6">
-    <div class="col-span-3">
+  <div class="mx-auto grid md:grid-cols-3 gap-2">
+    <div class="md:col-span-2">
       {% if product.image %}
         <img src="{{ product.image.url }}" alt="Image of {{ product.title }}" class="rounded-xl" />
       {% endif %}
     </div>
-    <div class="col-span-2 p-6 bg-gray-100 rounded-xl">
+    <div class="p-4 md:col-span-1 bg-gray-100 rounded-xl">
       <h1 class="text-2xl">{{ product.title }}</h1>
       {# prettier-ignore-start #}
-  <p class="text-xs text-gray-500">
-    ${{ product.get_display_price }} - <a href="{% url 'vendor_detail' product.user.id %}">{% firstof product.user.get_full_name product.user.username %}</a>
-  </p>
-  {# prettier-ignore-end #}
+      <p class="text-xs text-gray-500">
+        ${{ product.get_display_price }} - <a href="{% url 'vendor_detail' product.user.id %}">{% firstof product.user.get_full_name product.user.username %}</a>
+      </p>
+      {# prettier-ignore-end #}
       {% if product.description %}
         <p class="mt-4">{{ product.description }}</p>
       {% endif %}
@@ -38,7 +38,7 @@
     </div>
   </div>
 
-  <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+  <div class="mt-6 px-6 pt-2 bg-gray-100 rounded-xl">
     <h2 class="mb-12 text-2xl text-center">Related items</h2>
 
     <div class="grid grid-cols-3 gap-3">
